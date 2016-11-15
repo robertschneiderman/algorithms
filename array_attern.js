@@ -2,7 +2,7 @@
 // one is scrambled of the other
 // return function that takes single arr 
 
-const scrambledArrays = (org, scrambled) => {
+const arrayPattern = (org, scrambled) => {
 
   let mappings = getMappings(org, scrambled);
 
@@ -31,11 +31,6 @@ const getMappings = (org, scrambled) => {
   return mappings;
 }
 
-let r1 = scrambledArrays([1, 2, 3, 4], [4, 3, 2, 1]);
+let r1 = arrayPattern([1, 2, 3, 4], [4, 3, 2, 1]);
 
 console.log(r1([5, 6, 7, 8]));
-
-
-
-// N-ary Tree, find the longest path where numbers are increasing
-
