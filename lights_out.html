@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description">
+    <meta name="author">
+
+    <title>Lights Out</title>
+
+    <style>
+      * {
+        margin: 0
+      }
+
+      .grid {
+        margin: 20px 0 0 20px;
+      }
+
+      .row {
+        list-style: none;
+        display:flex;
+      }
+
+      .row:last-child .space {
+        border-bottom: 1px solid #666;
+      }
+
+      .row .space:last-child {
+        border-right: 1px solid #666;
+      }
+      .space {
+        border-top: 1px solid #666;
+        border-left: 1px solid #666;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+
+</head>    
+
+<body>
+
+<div class="grid">
+  <ul class="row" data-row="0">
+    <li class="space" data-space="0"></li>
+    <li class="space" data-space="1"></li>
+    <li class="space" data-space="2"></li>
+    <li class="space" data-space="3"></li>
+    <li class="space" data-space="4"></li>
+  </ul>
+  <ul class="row" data-row="1">
+    <li class="space" data-space="0"></li>
+    <li class="space" data-space="1"></li>
+    <li class="space" data-space="2"></li>
+    <li class="space" data-space="3"></li>
+    <li class="space" data-space="4"></li>
+  </ul>
+  <ul class="row" data-row="2">
+    <li class="space" data-space="0"></li>
+    <li class="space" data-space="1"></li>
+    <li class="space" data-space="2"></li>
+    <li class="space" data-space="3"></li>
+    <li class="space" data-space="4"></li>
+  </ul>
+  <ul class="row" data-row="3">
+    <li class="space" data-space="0"></li>
+    <li class="space" data-space="1"></li>
+    <li class="space" data-space="2"></li>
+    <li class="space" data-space="3"></li>
+    <li class="space" data-space="4"></li>
+  </ul>
+  <ul class="row" data-row="4">
+    <li class="space" data-space="0"></li>
+    <li class="space" data-space="1"></li>
+    <li class="space" data-space="2"></li>
+    <li class="space" data-space="3"></li>
+    <li class="space" data-space="4"></li>
+  </ul>
+</div>
+
+
+<script>
+
+class Board {
+  constructor() {
+    this.grid = document.querySelector('.grid');
+    this.initEvents();
+  }
+  
+  initEvents() {
+    let spaces = document.querySelectorAll('.space');
+    let that = this;
+    for (let i = 0; i < spaces.length; i++) {
+      console.log(spaces[i]);
+      spaces[i].addEventListener('click', this.handleClick.bind(this));
+    }
+  }
+  
+  handleClick(e) {  
+    let space = e.target;
+    let row = space.parentElement;
+    let rowNumber = row.getAttribute('data-row');
+    let spaceNumber = space.getAttribute('data-space');
+    
+    let toggles = this.getToggles(rowNumber, spaceNumber);
+    toggles.push(space);
+    console.log(toggles);
+    toggles.forEach(toggleSpace => {
+      toggleSpace.innerHTML = (toggleSpace.innerHTML === '') ? 'x' : '';
+    });
+  }  
+  
+  getToggles(rowNumber, spaceNumber) {
+    console.log(rowNumber);
+    console.log(spaceNumber);    
+    
+    let toggles = [];
+    let rowsToCheck = [rowNumber - 1, rowNumber + 1];    
+    let spacesToCheck = [spaceNumber - 1, spaceNumber + 1];
+
+    rowsToCheck.forEach(num => {
+      if ((num >= 0) && (num <= 4)) {
+        let row = this.grid.children.item(num);
+        toggles.push(row.children.item(spaceNumber));
+      }
+    });
+    
+    spacesToCheck.forEach(num => {
+      if ((num >= 0) && (num <= 4)) {
+        toggles.push(this.grid.children.item(rowNumber).children.item(num));
+      }
+    });    
+    
+    return toggles;
+  }
+}
+
+let b = new Board();  
+
+</script>
+
+</body>
+</html>
