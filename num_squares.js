@@ -2,52 +2,35 @@
 
 // For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 
-const numSquares = (n) => {
-  debugger;
-  if (isPerfectSquare(n)) return 1;
-  let leastCount = (n+1);
-  let perfectSquares = getPerfectSquares(n);
+// For loop goes through perfect squares
+// while loop add perfect square until equal or over
+//  equal: return count (inside while loop)
+//  over: reset count (after while loop)
 
-  const getLeastCount = (sum, count) => {
-    if (sum === n) {
-      if (leastCount > count) leastCount = count;
-      return;
-    } else if (sum > n) return;
 
-    count++;
 
-    perfectSquares.forEach(square => {
-
-      getLeastCount(sum + square, count);
-    });
-
-  };
-  getLeastCount(0, 0);
-
-  return leastCount;
-};
-
-const getPerfectSquares = n => {
-  let ps = [];
-  while (n > 0) {
-    if (isPerfectSquare(n)) {
-      ps.push(n);
+function numSquares(n) {
+  var map = [0],
+      i, j, min;
+  for( i = 1; i <= n; i++ ){
+    j = 1;
+    min = i;
+    while( j * j <= i ){ // 1*1 <= 1
+      min = Math.min(min, 1 + map[i - j * j]); // min = 1, 1 + map[1 - 1*1] -> (1, 1)
+      j++; // j = 2
     }
-    n--;
+    console.log("map:", map);
+    map[i] = min; //[0, 1, 2]
   }
-  return ps;
-}
-
-const isPerfectSquare = (n) => {
-  return (Math.sqrt(n) === Math.floor(Math.sqrt(n)));  
+  return map[n];
 }
 
 // console.log("isPerfectSquare(8):", isPerfectSquare(8));
 
-let t1 = numSquares(1);
-let t2 = numSquares(9);
-let t3 = numSquares(10);
-let t4 = numSquares(40);
+// let t1 = numSquares(1);
+// let t2 = numSquares(9);
+// let t3 = numSquares(10);
+let t4 = numSquares(1040);
 // let t5 = numSquares(200);
 
 
