@@ -37,7 +37,7 @@ const coinChange = val => {
   return combinations;
 };
 
-// let r = coinChange(15); // 6
+let r = coinChange(1000); // 6
 // 1...
 // 11111 111111 5
 // 11111 5 5
@@ -45,4 +45,4 @@ const coinChange = val => {
 // 11111 10
 // 5 10
 
-// console.log("r:", r);
+console.log("r:", r);
