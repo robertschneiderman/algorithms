@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/flattenBinaryTree.js",
+            "program": "${workspaceRoot}/find_peak_element.js",
             "cwd": "${workspaceRoot}"
         },
         {
