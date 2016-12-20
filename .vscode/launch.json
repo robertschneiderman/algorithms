@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/binary_trees/binary_tree_paths.js",
+            "program": "${workspaceRoot}/binary_trees/lowest_common_ancestor.js",
             "cwd": "${workspaceRoot}"
         },
         {

@@ -28,8 +28,6 @@ let c2 = new Node(7, lcOf2, rcOf2)
 let c1 = new Node(2, lcOf1, rcOf1)
 let parent = new Node(4, c1, c2);
 
-
-
 // recursive function switches left and right children, then passes each of the children into itself. Base case is a return when no children;
 
 const invertTree = function(root) {
