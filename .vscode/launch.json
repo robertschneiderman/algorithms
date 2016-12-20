@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/find_peak_element.js",
+            "program": "${workspaceRoot}/largest_num.js",
             "cwd": "${workspaceRoot}"
         },
         {
