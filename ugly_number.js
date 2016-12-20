@@ -9,16 +9,18 @@ const isUgly = num => {
     if (num === 1) return true;
 
     for (factor = num; factor > 5; factor--) {
-        if (isPrimeAndAboveFive(factor)) return false;
+        if (num % factor === 0) {
+            if (isPrimeAndAboveFive(factor)) return false;
+        }
     }
     return true;
 }
 
 const isPrimeAndAboveFive = num => {
-    for (div = num-1; div > 5; div--) {
+    for (div = num-1; div >= 2; div--) {
         if (num % div === 0) return false;
     }
     return true;
 }
 
-console.log('isUgly(7): ', isUgly(7));
+console.log('isUgly(15): ', isUgly(15));
