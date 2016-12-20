@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/ugly_number.js",
+            "program": "${workspaceRoot}/binary_trees/binary_tree_paths.js",
             "cwd": "${workspaceRoot}"
         },
         {
