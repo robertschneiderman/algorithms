@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/largest_num.js",
+            "program": "${workspaceRoot}/ugly_number.js",
             "cwd": "${workspaceRoot}"
         },
         {
