@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/maximum_product_of_word_length.js",
+            "program": "${workspaceRoot}/flatten_nested_iterator.js",
             "cwd": "${workspaceRoot}"
         },
         {
