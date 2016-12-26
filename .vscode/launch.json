@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/flatten_nested_iterator.js",
+            "program": "${workspaceRoot}/reverse_vowels.js",
             "cwd": "${workspaceRoot}"
         },
         {
