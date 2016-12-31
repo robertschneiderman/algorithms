@@ -23,25 +23,18 @@
 
 // begin with count = 0, if 4, then count++
 
-const combinationSum4 = (nums, target) => {
+const combinationSum4 = (nums, sum, target) => {
     let count = 0;
-
-    // const exploreCombinations = (nums, sum, target) => {
     if (sum === target) {
-        // count++;
         return 1;
     } else if (sum > target) {
         return 0;
     }
-
     nums.forEach(num => {
-        count += exploreCombinations(nums, (sum + num), target);
+        count += combinationSum4(nums, (sum + num), target);
     })
-    // }
-    // exploreCombinations(nums, 0, target);
-
     return count;
 }
 
-let result = combinationSum4([1, 2, 3], 5);
+let result = combinationSum4([1, 2, 3], 0, 4);
 console.log('result: ', result);
