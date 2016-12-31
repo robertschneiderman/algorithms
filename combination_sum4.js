@@ -26,19 +26,19 @@
 const combinationSum4 = (nums, target) => {
     let count = 0;
 
-    const exploreCombinations = (nums, sum, target) => {
-        if (sum === target) {
-            count++;
-            return;
-        } else if (sum > target) {
-            return;
-        }
-
-        nums.forEach(num => {
-            exploreCombinations(nums, (sum + num), target);
-        })
+    // const exploreCombinations = (nums, sum, target) => {
+    if (sum === target) {
+        // count++;
+        return 1;
+    } else if (sum > target) {
+        return 0;
     }
-    exploreCombinations(nums, 0, target);
+
+    nums.forEach(num => {
+        count += exploreCombinations(nums, (sum + num), target);
+    })
+    // }
+    // exploreCombinations(nums, 0, target);
 
     return count;
 }
