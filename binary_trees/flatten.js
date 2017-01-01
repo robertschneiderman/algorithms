@@ -39,30 +39,32 @@ let parent = new Node(1, c1, c2);
 // dfs through binary tree
 
 const flattenBinaryTree = root => {
-    let nodes = [];
-
     let recursiveFnc = (nodes, root) => {
         if (!root.left && !root.right) return [root];
 
-        if (root.left) return nodes.concat(recursiveFnc(nodes, root.left));
-        if (root.right) return nodes.concat(recursiveFnc(nodes, root.right));
+        let left = [];
+        let right = [];
+
+        if (root.left) left = left.concat(recursiveFnc(nodes, root.left));
+        if (root.right) right = right.concat(recursiveFnc(nodes, root.right));
+        return [root].concat(left).concat(right);
     }
 
-    recursiveFnc(nodes, root);
+    let nodes = recursiveFnc([], root);
 
-    return nodes;
+    for (i = 0; i < nodes.length; i++) {
+        let node = nodes[i];
+        node.right = nodes[i+1];
+        node.left = null;
+    }
+
+    return nodes[0];
 }
 
-let nodes = flattenBinaryTree(parent);
+let flattenedTree = flattenBinaryTree(parent);
+let node = flattenedTree;
 
-console.log(nodes);
-
-nodes.forEach(node => {
-    console.log(node.value);
-})
-
-// let node = parent;
-// while (node) {
-//     console.log(node);
-//     node = node.right;
-// }
+while (node) {
+    console.log(node);
+    node = node.right;
+}

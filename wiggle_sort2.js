@@ -12,7 +12,7 @@
 
 
 const wiggleSort = arr => {
-    let mean = getMean(arr);
+    let mean = getMedian(arr);
     let sortedNumbers = organizeNumbers(arr, mean);
     [largerArray, smallerArray] = sortedNumbers;
 
@@ -29,7 +29,7 @@ const wiggleSort = arr => {
     return result;
 }
 
-const getMean = arr => {
+const getMedian = arr => {
     let sum = 0;
     for (i = 0; i < arr.length; i++) {
         sum += arr[i];
