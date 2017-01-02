@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/binary_trees/flatten.js",
+            "program": "${workspaceRoot}/decode_string.js",
             "cwd": "${workspaceRoot}"
         },
         {
