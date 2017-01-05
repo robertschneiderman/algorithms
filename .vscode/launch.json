@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/elimination_game.js",
+            "program": "${workspaceRoot}/rotate_function.js",
             "cwd": "${workspaceRoot}"
         },
         {
