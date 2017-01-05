@@ -17,11 +17,6 @@
 
 // So the maximum value of F(0), F(1), F(2), F(3) is F(3) = 26.
 
-// set default max to 0
-// for length of array, rotate array by 1
-// use modulus to shift around
-// at end of each iteration, do math calculation with helper function adn overwrite max if necessary 
-
 const rotateFunction = arr => {
     let maximumValue = 0;
     for (let i = 0; i < arr.length; i++) {
