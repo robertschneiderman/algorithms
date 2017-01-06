@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/nth_digit.js",
+            "program": "${workspaceRoot}/largest_divisible_subset.js",
             "cwd": "${workspaceRoot}"
         },
         {
