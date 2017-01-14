@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/mini_parser.js",
+            "program": "${workspaceRoot}/linked_lists/add_two_numbers2.js",
             "cwd": "${workspaceRoot}"
         },
         {
