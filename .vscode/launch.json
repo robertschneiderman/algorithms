@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/largest_divisible_subset.js",
+            "program": "${workspaceRoot}/mini_parser.js",
             "cwd": "${workspaceRoot}"
         },
         {
