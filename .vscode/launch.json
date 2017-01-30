@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/linked_lists/add_two_numbers2.js",
+            "program": "${workspaceRoot}/find_all_anagrams_in_string.js",
             "cwd": "${workspaceRoot}"
         },
         {
