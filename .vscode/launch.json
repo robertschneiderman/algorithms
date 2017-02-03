@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/find_all_anagrams_in_string.js",
+            "program": "${workspaceRoot}/robber.js",
             "cwd": "${workspaceRoot}"
         },
         {
