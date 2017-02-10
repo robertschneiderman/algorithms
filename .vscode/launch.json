@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/reverse_words.js",
+            "program": "${workspaceRoot}/arrange_coins.js",
             "cwd": "${workspaceRoot}"
         },
         {

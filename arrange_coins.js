@@ -19,21 +19,21 @@
 
 // Because the 4th row is incomplete, we return 3.
 
-const arrangeCoins = function(n) {
-    let rowCount = 0;
-    let coinsUsed = 0;
-    let increment = 1;
-
-    while (coinsUsed <= n) {
-        rowCount++;
-        coinsUsed += increment;
-        increment++;
-    }
-
-    if (coinsUsed > n) rowCount--;
-
-    return rowCount;
+const getStepCoins = (step) => {
+    return step * (step + 1) / 2;    
 };
 
-let result = arrangeCoins(15);
+const arrangeCoins = function(numOfCoins) {
+    let stepCoins = 0;
+    let steps = 0;
+    while (stepCoins < numOfCoins) {
+        stepCoins = getStepCoins(steps);
+        if (stepCoins > numOfCoins) break;
+        steps++;
+    }
+    return steps-1;
+};
+
+
+let result = arrangeCoins(100);
 console.log('result: ', result);
