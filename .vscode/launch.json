@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/water_blocks.js",
+            "program": "${workspaceRoot}/rearrange_palindrome.js",
             "cwd": "${workspaceRoot}"
         },
         {

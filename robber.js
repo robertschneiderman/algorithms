@@ -29,4 +29,3 @@ const burgular = (arr, count) => {
 let result = burgular([1, 10, 3, 20, 12], 0);
 
 console.log('result: ', result);
-
